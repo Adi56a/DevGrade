@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LaTeX Report Writing Services</title>
+    <style>
+        /* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Setup */
+body {
+    font-family: 'Arial', sans-serif;
+    height: 100%;
+    background-color: #000;
+    color: white;
+    overflow-x: hidden;
+}
+
+/* LaTeX Report Section */
+.latex-container {
+    position: relative;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    margin-top: 20vh;
+}
+
+/* Background Image */
+.image-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('your-image.jpg'); /* Replace with your image URL */
+    background-position: center;
+    background-size: cover;
+    z-index: -2;
+}
+
+/* Background Video */
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    object-fit: cover;
+}
+
+/* Overlay for readability */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 0;
+}
+
+/* Content Section */
+.latex-content {
+    position: relative;
+    z-index: 1;
+    max-width: 1200px;
+    padding: 40px;
+    text-align: center;
+}
+
+/* Title */
+.title {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #ffcc00; /* Yellow accent color */
+}
+
+/* Subtitle */
+.subtitle {
+    font-size: 20px;
+    color: #f4f4f4;
+    margin-bottom: 40px;
+}
+
+/* Info Cards */
+.info-cards {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 60px;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 25px;
+    width: 30%;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    color: white;
+    text-align: left;
+}
+
+.card h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.card p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Report Showcase Gallery */
+.report-showcase {
+    margin-bottom: 60px;
+}
+
+.showcase-title {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #ffcc00; /* Yellow accent color */
+}
+
+.report-gallery {
+    display: flex;
+    justify-content: space-around;
+    gap: 30px;
+}
+
+.report-item {
+    width: 30%;
+    text-align: center;
+}
+
+.report-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.report-title {
+    margin-top: 15px;
+    font-size: 18px;
+    color: #ffcc00;
+}
+
+/* Call to Action */
+.cta {
+    background-color: #ffcc00;
+    padding: 40px;
+    margin-top: 40px;
+    border-radius: 10px;
+    color: black;
+}
+
+.cta h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.cta p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.cta-button {
+    font-size: 18px;
+    background-color: #000;
+    color: #fff;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #ffcc00;
+    color: #000;
+   
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .info-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+
+    .report-gallery {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .report-item {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+
+    .cta{
+        padding: 0;
+        margin: 0;
+        border: 0;
+        width: 100%;
+    }
+}
+
+    </style>
+</head>
+<body>
+
+    {% include 'navbar.html' %}
+
+    <!-- LaTeX Report Section -->
+    <section class="latex-container">
+        <!-- Background Image -->
+        <div class="image-background"></div>
+
+        <!-- Background Video -->
+        <div class="video-background">
+            <video autoplay muted loop id="bg-video">
+                <source src="https://videos.pexels.com/video-files/6774213/6774213-sd_640_360_30fps.mp4" type="video/mp4">
+            </video>
+        </div>
+
+        <!-- Overlay for readability -->
+        <div class="overlay"></div>
+
+        <!-- Content Section -->
+        <div class="latex-content">
+            <h1 class="title">LaTeX Report Writing Services</h1>
+            <p class="subtitle">Professional LaTeX report writing services to make your research work stand out!</p>
+
+            <!-- Info Cards Section -->
+            <div class="info-cards">
+                <div class="card">
+                    <h2>High Quality Reports</h2>
+                    <p>We provide meticulously formatted and structured LaTeX reports for all academic disciplines.</p>
+                </div>
+                <div class="card">
+                    <h2>Fast Delivery</h2>
+                    <p>Get your LaTeX reports delivered on time with guaranteed high quality, no matter the deadline.</p>
+                </div>
+                <div class="card">
+                    <h2>Completely Customizable</h2>
+                    <p>Our reports are fully customizable according to your specifications, ensuring a tailored experience.</p>
+                </div>
+            </div>
+
+            <!-- LaTeX Report Showcase Section -->
+            <div class="report-showcase">
+                <h2 class="showcase-title">Sample LaTeX Reports</h2>
+                <p>Explore some of the exceptional LaTeX reports we've written for our clients:</p>
+                <div class="report-gallery">
+                    <!-- Example Reports -->
+                    <div class="report-item">
+                        <img src="https://imgs.search.brave.com/vRVvd5CGLk-vtpj8Vu7K0nFqZVTkrsWkgt7zwkVBzsQ/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy8y/LzIyL0xhVGVYX2Nv/dmVyLnN2Zw" alt="LaTeX Report 1">
+                        <p class="report-title">LaTeX Report 1</p>
+                    </div>
+                    <div class="report-item">
+                        <img src="https://imgs.search.brave.com/ZepFVmI1kg4q1ephIDw7-08nHNlSkps0U0qVLOgHUZg/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9saWJh/cHBzLnMzLmFtYXpv/bmF3cy5jb20vYWNj/b3VudHMvMTM1NjIy/L2ltYWdlcy9sYXRl/eF9maWd1cmUuSlBH" alt="LaTeX Report 2">
+                        <p class="report-title">LaTeX Report 2</p>
+                    </div>
+                    <div class="report-item">
+                        <img src="https://imgs.search.brave.com/XFyN6mrz5Xd_QzFpeM5n6Mx9XrcgY0uANcyhqjVQFDE/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9zaGFy/ZWxhdGV4LXdpa2kt/Y2RuLTY3MTQyMC5j/LmNkbjc3Lm9yZy9s/ZWFybi1zY3JpcHRz/L2ltYWdlcy81LzU4/L09MVjJTZWN0aW9u/c0NoYXB0ZXJzRXgz/LnBuZw" alt="LaTeX Report 3">
+                        <p class="report-title">LaTeX Report 3</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Call to Action -->
+            <div class="cta">
+                <h2>Ready to Start Your LaTeX Report?</h2>
+                <p>Contact us today and get your custom LaTeX report done with expert precision and speed.</p>
+                <a href="/contacts" class="cta-button">Contact Us</a>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

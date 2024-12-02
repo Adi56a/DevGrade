@@ -1,0 +1,42 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navigation Bar</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='test.css') }}">
+
+</head>
+
+
+<header>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo" class="logo-img">
+            <span class="company-name">Dev Grade</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/services">Services</a></li>
+            <li><a href="/contacts">Contact</a></li>
+            <li><a href="/research">Research Paper </a></li>
+            <!-- <li><a href="#contact">Review Paper </a></li> -->
+            <li><a href="/latex">Latex Report </a></li>
+        </ul>
+        <div class="menu-toggle" id="menu-toggle">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </nav>
+</header>
+
+
+<script>
+    document.getElementById('menu-toggle').addEventListener('click', function() {
+        const navLinks = document.querySelector('.nav-links');
+        navLinks.classList.toggle('active');
+    
+    
+    
+    
+    });
+</script>

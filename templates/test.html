@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navigation Bar</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='test.css') }}">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+</head>
+<body>
+  {% include 'navbar.html' %}
+
+
+  
+
+
+
+
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide" style="background-image: url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');background-position: center;">Web Project</div>
+          <div class="swiper-slide" style="background-image: url('https://media.istockphoto.com/id/2138731572/photo/neural-network-nodes-deep-learning-artificial-intelligence-machine-learning-model.webp?a=1&b=1&s=612x612&w=0&k=20&c=afex9DCzwug9hEkUZEyf2rRx1QgxI73TlQwXyWjHkls=');background-position: center;"> Machine Learning </div>
+          <div class="swiper-slide" style="background-image: url('https://plus.unsplash.com/premium_photo-1677094310918-cc302203b21c?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');background-position: center;">Deep Learing </div>
+          <div class="swiper-slide" style="background-image: url('https://plus.unsplash.com/premium_photo-1683121718643-fb18d2668d53?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');background-position: center;">Artificial Intelligence </div>
+          <div class="swiper-slide" style="background-image: url('https://images.unsplash.com/photo-1719253480609-579ad1622c65?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">Backend </div>
+          <div class="swiper-slide" style="background-image:url('https://images.unsplash.com/photo-1667372393086-9d4001d51cf1?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');background-position: center;">Frontend  </div>
+          
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+        <div class="autoplay-progress">
+          <svg viewBox="0 0 48 48">
+            <circle cx="24" cy="24" r="20"></circle>
+          </svg>
+          <span></span>
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <section class="hero-section">
+        <div class="hero-content">
+            <h1>Welcome to Your ProDev Solutions</h1>
+            <p>We provide world-class solutions for your academic and business needs.</p>
+            <a href="/services" class="cta-button">Explore Our Services</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2>About Us</h2>
+            <p>We are a team of experts committed to delivering high-quality services in academic writing, research, and business solutions. Our goal is to help you succeed.</p>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services-section">
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="service-cards">
+                <div class="card">
+                    <h3>Research Papers</h3>
+                    <p>Get professional and original research papers written by our team of experts.</p>
+                </div>
+                <div class="card">
+                    <h3>LaTeX Reports</h3>
+                    <p>Beautifully formatted LaTeX reports with precise structure and content.</p>
+                </div>
+                <div class="card">
+                    <h3>Project Assistance</h3>
+                    <p>We offer help with project work, ensuring high standards and timely delivery.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <p>Ready to get started? Reach out to us today!</p>
+            <a href="mailto:info@yourdomain.com" class="cta-button">Email Us</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Your Company | All Rights Reserved</p>
+        </div>
+    </footer>
+
+
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+        // JavaScript for the Hamburger Menu toggle
+document.getElementById('menu-toggle').addEventListener('click', function() {
+    const navLinks = document.querySelector('.nav-links');
+    navLinks.classList.toggle('active');
+
+
+
+
+});
+
+
+
+
+const progressCircle = document.querySelector(".autoplay-progress svg");
+const progressContent = document.querySelector(".autoplay-progress span");
+var swiper = new Swiper(".mySwiper", {
+  spaceBetween: 30,
+  centeredSlides: true,
+  autoplay: {
+    delay: 2500,
+    disableOnInteraction: false
+  },
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev"
+  },
+  on: {
+    autoplayTimeLeft(s, time, progress) {
+      progressCircle.style.setProperty("--progress", 1 - progress);
+      progressContent.textContent = `${Math.ceil(time / 1000)}s`;
+    }
+  }
+});
+    </script>
+
+
+
+
+    <!-- Initialize Swiper -->
+   
+  
+</body>
+</html>

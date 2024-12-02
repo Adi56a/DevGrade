@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Setup */
+body {
+    font-family: 'Arial', sans-serif;
+    height: 100vh;
+    background-color: #000;
+    color: white;
+    overflow: hidden;
+}
+
+/* Contact Container */
+.contact-container {
+    position: relative;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+}
+
+/* Background Video */
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    object-fit: cover;
+}
+
+/* Overlay for readability */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 0;
+}
+
+/* Contact Content */
+.contact-content {
+    position: relative;
+    z-index: 1;
+    color: white;
+    padding: 20px;
+    max-width: 600px;
+}
+
+/* Title */
+.title {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #ffcc00; /* Bright color for emphasis */
+}
+
+/* Subtitle */
+.subtitle {
+    font-size: 20px;
+    margin-bottom: 40px;
+    color: #f4f4f4;
+}
+
+/* Contact Info */
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    font-size: 18px;
+}
+
+.icon {
+    width: 40px;
+    height: 40px;
+}
+
+.icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Contact Text */
+.info-text {
+    font-weight: 500;
+}
+
+a {
+    color: #ffcc00;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #fff;
+}
+
+
+    </style>
+</head>
+<body>
+
+
+    {% include 'navbar.html' %}
+
+    <!-- Contact Section -->
+    <section class="contact-container">
+        <!-- Background Video -->
+        <div class="video-background">
+            <video autoplay muted loop id="bg-video">
+                <source src="https://videos.pexels.com/video-files/3209552/3209552-sd_640_360_25fps.mp4" type="video/mp4">
+            </video>
+        </div>
+
+        <!-- Overlay for text readability -->
+        <div class="overlay"></div>
+
+        <!-- Contact Content -->
+        <div class="contact-content">
+            <h1 class="title">Get In Touch</h1>
+            <p class="subtitle">We're here to help you with your project needs</p>
+
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="icon">
+                        <img src="https://cdn-icons-png.flaticon.com/128/732/732200.png" alt="Email">
+                    </div>
+                    <p class="info-text">Email: <a href="mailto:info@yourdomain.com">projectdevelopment901@gmail.com</a></p>
+                </div>
+                <div class="contact-item">
+                    <div class="icon">
+                        <img src="https://cdn-icons-png.flaticon.com/128/724/724664.png" alt="Phone">
+                    </div>
+                    <p class="info-text">Phone: <a href="tel:+1234567890">+91 9322534430</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
