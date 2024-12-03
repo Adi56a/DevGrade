@@ -5,13 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - Tech Projects</title>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         /* General Styles */
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f9fafb;
+            background-color: #f4f6f9;
             color: #333;
         }
 
@@ -63,6 +65,10 @@
         .section {
             padding: 80px 20px;
             text-align: center;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin-bottom: 40px;
         }
 
         .section h2 {
@@ -94,18 +100,24 @@
         }
 
         .tech-stack div {
-            background-color: #333;
+            background-color: #0c0c0c;
             padding: 20px;
             border-radius: 10px;
             color: white;
             text-align: center;
-            width: 200px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 180px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
         .tech-stack div h3 {
             margin-bottom: 10px;
             font-size: 1.25rem;
+        }
+
+        .tech-stack div i {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: #f39c12;
         }
 
         /* Footer Section */
@@ -114,22 +126,17 @@
             color: white;
             padding: 20px;
             text-align: center;
+            font-size: 1rem;
         }
-
-
-
-
-
 
         .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 10px 20px;
-            background-color: #0c0c0c;
+            padding: 20px;
+            background-color: #333;
             color: white;
             position: relative;
-            padding: 2vw;
         }
         
         .navbar .logo {
@@ -138,20 +145,20 @@
         }
         
         .navbar .logo img {
-            width: 60px;
-            height: 60px;
+            width: 50px;
+            height: 50px;
             margin-right: 10px;
         }
         
         .navbar .company-name {
-            font-size: 20px;
+            font-size: 22px;
             font-weight: bold;
+            letter-spacing: 1px;
         }
         
         .nav-links {
             display: flex;
             list-style-type: none;
-            z-index: 100;
         }
         
         .nav-links li {
@@ -168,7 +175,7 @@
         .nav-links a:hover {
             color: #f39c12;
         }
-        
+
         /* Hamburger Menu */
         .menu-toggle {
             display: none;
@@ -222,22 +229,20 @@
         h2 {
             color: #333;
         }
-        
-        
-        
 
 
-
-
+        .what_we_do{
+            background-color: rgba(218, 176, 110, 0.763);
+             color: black;
+             font-weight: bold;
+        }
     </style>
 </head>
 
 <body>
 
+    <!-- Navbar -->
     {% include 'navbar.html' %}
-
-
-
 
 
     <!-- Hero Section -->
@@ -253,10 +258,10 @@
     </section>
 
     <!-- What We Do Section -->
-    <section class="section bg-gray-100">
+    <section class="what_we_do section bg-red-300">
         <h2>What We Do</h2>
-        <p>We offer students the chance to buy or build projects using cutting-edge technologies such as Machine Learning, Deep Learning, Web Development, and more!</p>
-        <p>Whether you're looking to create a personal project or need help building something professional, we provide a platform for learning, collaboration, and innovation.</p>
+        <p>"We provide students with unique opportunities to either purchase or build innovative projects using the latest and most advanced technologies available today. Whether you're interested in Machine Learning, Deep Learning, Web Development, Mobile Application Development, or Artificial Intelligence, our platform is designed to help you dive deep into these fields. Students can explore cutting-edge tools and frameworks, gain hands-on experience, and develop real-world applications that are not only useful but also showcase their skills to future employers. We aim to foster an environment where learners can build their portfolios, experiment with modern tech stacks, and gain valuable insights into the tech industry. Join us to create transformative projects that will empower you in your academic and professional journey!"</p>
+        <p>Whether you're looking to create a personal project or need help building something professional, we provide a tech software solutions .</p>
     </section>
 
     <!-- Our Services Section -->
@@ -265,18 +270,22 @@
         <p>We specialize in various fields of technology, helping you bring your ideas to life. From machine learning to full-stack development, our services cater to diverse needs.</p>
         <div class="tech-stack">
             <div>
+                <i class="fas fa-brain"></i>
                 <h3>Machine Learning</h3>
                 <p>Build and deploy ML models for your projects</p>
             </div>
             <div>
+                <i class="fas fa-network-wired"></i>
                 <h3>Deep Learning</h3>
                 <p>Create advanced neural networks for intelligent applications</p>
             </div>
             <div>
+                <i class="fas fa-laptop-code"></i>
                 <h3>Web Development</h3>
                 <p>Develop beautiful, responsive websites and applications</p>
             </div>
             <div>
+                <i class="fas fa-server"></i>
                 <h3>Full Stack</h3>
                 <p>From front-end to back-end, we handle the complete stack</p>
             </div>
@@ -289,38 +298,47 @@
         <p>Our projects are built using the most powerful and modern technologies available today. Here's the tech stack we work with:</p>
         <div class="tech-stack">
             <div>
+                <i class="fab fa-python"></i>
                 <h3>Python</h3>
                 <p>For machine learning, deep learning, and backend development</p>
             </div>
             <div>
+                <i class="fab fa-js"></i>
                 <h3>JavaScript</h3>
                 <p>For dynamic, interactive web applications</p>
             </div>
             <div>
+                <i class="fab fa-css3-alt"></i>
                 <h3>Tailwind CSS</h3>
                 <p>For beautiful, responsive, and customizable UI design</p>
             </div>
             <div>
+                <i class="fab fa-docker"></i>
                 <h3>Docker</h3>
                 <p>For containerization and easy deployment</p>
             </div>
             <div>
+                <i class="fab fa-react"></i>
                 <h3>React</h3>
                 <p>For building fast, interactive front-end user interfaces</p>
             </div>
             <div>
+                <i class="fab fa-node"></i>
                 <h3>Node.js</h3>
                 <p>For scalable server-side applications</p>
             </div>
             <div>
+                <i class="fab fa-node-js"></i>
                 <h3>Express.js</h3>
                 <p>For creating robust APIs and backend services</p>
             </div>
             <div>
+                <i class="fas fa-database"></i>
                 <h3>MongoDB</h3>
                 <p>NoSQL database for flexible and scalable data storage</p>
             </div>
             <div>
+                <i class="fas fa-database"></i>
                 <h3>SQL</h3>
                 <p>For structured data management and storage</p>
             </div>
