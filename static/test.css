@@ -21,7 +21,7 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 200;
+    z-index: 300;
     padding: 2vw;
     width: 100%;
     
@@ -148,7 +148,13 @@ h2 {
     color: rgb(204, 248, 7);
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-weight: bold;
+    flex-direction: column;
 
+  }
+
+  .swiper-slide p{
+    font-size: 1rem;
+    color: white;
   }
 
 
@@ -263,7 +269,7 @@ h2 {
 
 /* About Section */
 .about-section {
-    background-color: #111;
+    background-color: #000000;
     padding: 50px 20px;
     text-align: center;
 }
@@ -283,7 +289,7 @@ h2 {
 /* Services Section */
 .services-section {
     padding: 50px 20px;
-    background-color: #222;
+    background-color: #000000;
 }
 
 .services-section h2 {
@@ -301,7 +307,7 @@ h2 {
 }
 
 .card {
-    background-color: #333;
+    background-color: #aa9d0bf5;
     padding: 30px;
     border-radius: 10px;
     width: 30%;
@@ -328,7 +334,7 @@ h2 {
 /* Contact Section */
 .contact-section {
     padding: 50px 20px;
-    background-color: #111;
+    background-color: #000000;
     text-align: center;
 }
 
@@ -355,7 +361,7 @@ h2 {
 
 /* Footer */
 footer {
-    background-color: #222;
+    background-color: #000000;
     padding: 20px;
     text-align: center;
 }
