@@ -8,7 +8,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background-color: #333;
+            background-color: #000000;
             padding: 10px 20px;
             position: relative;
             z-index: 500;
@@ -27,6 +27,7 @@
             text-transform: uppercase;
             letter-spacing: 2px;
             transition: color 0.3s ease;
+            text-decoration: none;
         }
 
         /* Styling the navigation links */
@@ -136,7 +137,7 @@
             <!-- Logo with a link to the home page -->
             <a href="/" class="logo">
                 <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo" class="logo-img">
-                <span class="company-name">Dev Grade</span>
+                <span class="company-name" style="text-decoration: none;">Dev Grade</span>
             </a>
 
             <!-- Dropdown button for mobile screens -->
