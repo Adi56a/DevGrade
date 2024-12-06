@@ -293,5 +293,62 @@ body {
             </div>
         </div>
     </section>
+
+    <!-- GSAP Animation Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"></script>
+    <script>
+        // Title and subtitle animations
+        gsap.from(".title", {
+            opacity: 0,
+            y: -50,
+            duration: 1,
+            ease: "power3.out"
+        });
+
+        gsap.from(".subtitle", {
+            opacity: 0,
+            y: 30,
+            duration: 1.5,
+            delay: 0.5,
+            ease: "power3.out"
+        });
+
+        // Staggered animation for info cards
+        gsap.from(".card", {
+            opacity: 0,
+            y: 50,
+            duration: 1,
+            stagger: 0.2,
+            ease: "power3.out"
+        });
+
+        // Fade and scale for report items
+        gsap.from(".report-item img", {
+            opacity: 0,
+            scale: 0.8,
+            duration: 1,
+            stagger: 0.3,
+            ease: "back.out(1.7)"
+        });
+
+        // Call to action animation
+        gsap.from(".cta", {
+            opacity: 0,
+            y: 50,
+            duration: 1.5,
+            delay: 1,
+            ease: "power3.out"
+        });
+
+        // Button hover effect
+        const ctaButton = document.querySelector(".cta-button");
+        ctaButton.addEventListener("mouseenter", () => {
+            gsap.to(ctaButton, { scale: 1.1, ease: "power2.out" });
+        });
+
+        ctaButton.addEventListener("mouseleave", () => {
+            gsap.to(ctaButton, { scale: 1, ease: "power2.out" });
+        });
+    </script>
 </body>
 </html>
