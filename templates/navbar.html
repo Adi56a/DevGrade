@@ -1,7 +1,9 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ProDev Solution </title>
+    <title>ProDev Solution</title>
     <style>
         /* General navbar styling */
         .navbar {
@@ -12,26 +14,26 @@
             padding: 10px 20px;
             position: relative;
             z-index: 500;
+            flex-wrap: wrap;  /* Allow items to wrap */
         }
 
+        /* Logo styling */
         .logo-img {
-            height: 40px;
-            transition: transform 0.3s ease;
+            height: 50px;
+            transition: transform 0.3s ease, height 0.3s ease;
         }
 
         .company-name {
             color: white;
-            font-size: 2rem;
+            font-size: 2rem; /* Smaller font size on small screens */
             margin-left: 10px;
             font-weight: bold;
-            
             letter-spacing: 2px;
             transition: color 0.3s ease;
             text-decoration: none;
-
         }
 
-        /* Styling the navigation links */
+        /* Navbar links styling */
         .nav-links {
             list-style-type: none;
             display: flex;
@@ -48,14 +50,15 @@
             font-size: 1rem;
             padding: 8px 15px;
             border-radius: 5px;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, padding-left 0.3s ease;
         }
 
         .nav-links a:hover {
             background-color: #575757;
+            padding-left: 20px;
         }
 
-        /* Logo: Hover effect to scale */
+        /* Logo hover effect */
         .logo:hover .logo-img {
             transform: scale(1.1);
         }
@@ -64,7 +67,7 @@
             color: #f4a261;
         }
 
-        /* Hide nav links on large screens and keep them visible only on mobile */
+        /* Mobile menu styles */
         @media screen and (max-width: 768px) {
             .nav-links {
                 display: none;
@@ -103,7 +106,7 @@
                 background-color: #575757;
             }
 
-            /* Hover effect on menu items */
+            /* Mobile navigation link hover effects */
             .nav-links a {
                 font-size: 1.2rem;
                 padding: 12px;
@@ -116,9 +119,24 @@
                 background-color: #575757;
                 padding-left: 20px;
             }
+
+            /* Mobile logo resizing */
+            .logo-img {
+                height: 40px;  /* Smaller logo on mobile */
+            }
+
+            .company-name {
+                font-size: 1.2rem; /* Adjust logo text for smaller screens */
+                text-align: center;
+            }
+
+            .navbar {
+                justify-content: space-between;
+                padding: 10px;
+            }
         }
-        
-        /* Desktop: Make sure the menu is not displayed */
+
+        /* Desktop: Menu always visible */
         @media screen and (min-width: 769px) {
             .nav-links {
                 display: flex;
@@ -128,8 +146,19 @@
             .dropdown {
                 display: none;
             }
+
+            /* Larger logo on desktop */
+            .logo-img {
+                height: 60px;
+            }
+
+            .company-name {
+                font-size: 2.5rem;  /* Larger font size for desktop */
+            }
         }
     </style>
+    <!-- Include GSAP Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js"></script>
 </head>
 
 <body>
@@ -138,7 +167,7 @@
             <!-- Logo with a link to the home page -->
             <a href="/" class="logo">
                 <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo" class="logo-img">
-                <span class="company-name" style="text-decoration: none;">ProDev</span>
+                <span class="company-name" style="text-decoration:underline;">ProDev</span>
             </a>
 
             <!-- Dropdown button for mobile screens -->
@@ -160,14 +189,31 @@
     <script>
         // Wait for the DOM to fully load
         document.addEventListener('DOMContentLoaded', function() {
-            // Get the dropdown button and the nav links
             const dropdownToggle = document.getElementById('dropdown-toggle');
             const navLinks = document.querySelector('.nav-links');
-            
-            // Add click event listener to toggle the 'active' class on the nav-links
+
+            // Animate logo and navbar elements on load
+            gsap.from(".logo-img", { duration: 1, y: -30, opacity: 0, ease: "power4.out" });
+            gsap.from(".company-name", { duration: 1.2, x: -50, opacity: 0, delay: 0.3, ease: "power4.out" });
+            gsap.from(".nav-links a", {
+                duration: 1, 
+                opacity: 0, 
+                y: 20,  // Increased the value to 20 to make them visible from the start
+                delay: 0.5,
+                stagger: 0.3, 
+                ease: "power4.out"
+            });
+
+            // Mobile menu toggle with GSAP animation
             dropdownToggle.addEventListener('click', function() {
                 navLinks.classList.toggle('active');
+                if (navLinks.classList.contains('active')) {
+                    gsap.fromTo(navLinks, { y: -20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "power4.out" });
+                } else {
+                    gsap.to(navLinks, { y: -20, opacity: 0, duration: 0.3, ease: "power4.in" });
+                }
             });
         });
     </script>
 </body>
+</html>
