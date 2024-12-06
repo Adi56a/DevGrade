@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Navigation Bar</title>
+    <title>ProDev</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='test.css') }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- Include GSAP library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"></script>
 </head>
 <body>
   {% include 'navbar.html' %}
@@ -13,22 +15,16 @@
   <!-- Swiper Slider -->
   <div class="swiper mySwiper">
     <div class="swiper-wrapper">
-      <div class="swiper-slide" style="background-image: url('https://images.unsplash.com/photo-1725113160825-f68f7686bb2f?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');background-position: center;">Web Project <p>A web development project refers to the process of creating, designing, and maintaining a website or web application tailored to specific needs...</p></div>
-      <div class="swiper-slide" style="background-image: url('https://images.unsplash.com/photo-1674027444485-cec3da58eef4?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');background-position: center;">Machine Learning <p>A Machine Learning (ML) project involves developing algorithms...</p></div>
-      <div class="swiper-slide" style="background-image: url('https://plus.unsplash.com/premium_photo-1677094310918-cc302203b21c?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');background-position: center;">Deep Learning <p>A Deep Learning project involves developing advanced neural networks...</p></div>
-      <div class="swiper-slide" style="background-image: url('https://plus.unsplash.com/premium_photo-1683121718643-fb18d2668d53?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');background-position: center;">Artificial Intelligence <p>An Artificial Intelligence (AI) project involves creating systems...</p></div>
-      <div class="swiper-slide" style="background-image: url('https://plus.unsplash.com/premium_photo-1663040543387-cb7c78c4f012?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');background-position:center;color:white;">Backend <p>A Backend Web Development Project involves building the server-side components...</p></div>
-      <div class="swiper-slide" style="background-image:url('https://plus.unsplash.com/premium_photo-1720008915560-e7e723c0bfc8?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');background-position: center;color:white;">Frontend <p>A Frontend Web Development Project involves creating the user-facing part...</p></div>
+      <div class="swiper-slide">Web Development <p>A web development project refers to the process of creating, designing, and maintaining a website or web application tailored to specific needs...</p></div>
+      <div class="swiper-slide">Machine Learning <p>A Machine Learning (ML) project involves developing algorithms...</p></div>
+      <div class="swiper-slide">Deep Learning <p>A Deep Learning project involves developing advanced neural networks...</p></div>
+      <div class="swiper-slide">Artificial Intelligence <p>An Artificial Intelligence (AI) project involves creating systems...</p></div>
+      <div class="swiper-slide">Backend <p>A Backend Web Development Project involves building the server-side components...</p></div>
+      <div class="swiper-slide">Frontend <p>A Frontend Web Development Project involves creating the user-facing part...</p></div>
     </div>
     <div class="swiper-button-next"></div>
     <div class="swiper-button-prev"></div>
     <div class="swiper-pagination"></div>
-    <div class="autoplay-progress">
-      <svg viewBox="0 0 48 48">
-        <circle cx="24" cy="24" r="20"></circle>
-      </svg>
-      <span></span>
-    </div>
   </div>
 
   <!-- Hero Section -->
@@ -64,15 +60,21 @@
       navigation: {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev"
-      },
-      on: {
-        autoplayTimeLeft(s, time, progress) {
-          const progressCircle = document.querySelector(".autoplay-progress svg");
-          const progressContent = document.querySelector(".autoplay-progress span");
-          progressCircle.style.setProperty("--progress", 1 - progress);
-          progressContent.textContent = `${Math.ceil(time / 1000)}s`;
-        }
       }
+    });
+
+    // GSAP Animations for Slow and Smooth Transition
+    window.addEventListener('load', function() {
+      // Hero Section animation
+      gsap.from(".hero-content h1", { opacity: 0, y: -100, duration: 2, ease: "power4.out" });
+      gsap.from(".hero-content p", { opacity: 0, y: 30, duration: 2, delay: 0.5, ease: "power4.out" });
+      gsap.from(".cta-button", { opacity: 0, y: 30, duration: 2, delay: 1, ease: "power4.out" });
+
+      // Animate Swiper Slides with slower fade-in and scale effect
+      gsap.from(".swiper-slide", { opacity: 0, scale: 0.7, stagger: 0.3, duration: 2, ease: "power4.out" });
+
+      // Footer Animation with delay for smooth reveal
+      gsap.from(".footer-content", { opacity: 0, y: 80, duration: 2, delay: 1.5, ease: "power4.out" });
     });
 
     // Log to verify Swiper is initialized
